@@ -1,27 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="pixel_city" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IW4-Tl-1e8"/>
+                        <viewControllerLayoutGuide type="bottom" id="I1b-RS-Yre"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MN9-IX-FcB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQG-vD-4FC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double-tap to drop a pin and view photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAj-hh-Rfc">
+                                        <rect key="frame" x="4.5" y="24" width="311" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="qNH-vE-xVB"/>
+                                            <constraint firstAttribute="height" constant="22" id="vm9-7w-cBa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IAj-hh-Rfc" firstAttribute="centerY" secondItem="mQG-vD-4FC" secondAttribute="centerY" id="2si-gD-HHN"/>
+                                    <constraint firstItem="IAj-hh-Rfc" firstAttribute="centerX" secondItem="mQG-vD-4FC" secondAttribute="centerX" id="VZj-XO-rzf"/>
+                                    <constraint firstAttribute="height" constant="70" id="eBf-hm-f1q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="MN9-IX-FcB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Vc-Ih-fHu"/>
+                            <constraint firstItem="I1b-RS-Yre" firstAttribute="top" secondItem="MN9-IX-FcB" secondAttribute="bottom" id="5KE-5I-RtA"/>
+                            <constraint firstAttribute="trailing" secondItem="MN9-IX-FcB" secondAttribute="trailing" id="6v9-uw-uHo"/>
+                            <constraint firstItem="MN9-IX-FcB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CwO-ld-vIo"/>
+                            <constraint firstAttribute="trailing" secondItem="mQG-vD-4FC" secondAttribute="trailing" id="VxU-wS-1qM"/>
+                            <constraint firstItem="mQG-vD-4FC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="am5-7U-0kW"/>
+                            <constraint firstItem="mQG-vD-4FC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wp5-0M-t62"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="87.5" y="148.5"/>
         </scene>
     </scenes>
 </document>
